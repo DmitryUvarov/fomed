@@ -80,9 +80,7 @@
   }
 
   &__button {
-    @media (max-width: $mobile) {
-      //   width: 100%;
-    }
+    column-gap: toRem(50);
   }
 
   &__bg-ibg {
@@ -293,6 +291,44 @@
 }
 
 //========================================================================================================================================================
+
+.reviews-block {
+  @include adaptiveValue("padding-top", 95, 40);
+  @include adaptiveValue("padding-bottom", 95, 40);
+  &__title {
+    &:not(:last-child) {
+      @include adaptiveValue("margin-bottom", 60, 40);
+    }
+  }
+
+  &__body {
+    display: grid;
+    grid-template-columns: repeat(2, 1fr);
+    @include adaptiveValue("gap", 50, 30, 0, 1230, 991);
+    @include adaptiveValue("gap", 30, 10, 1, 991, 375);
+  }
+
+  &__image-ibg--contain {
+    padding-bottom: percent(800, 575);
+  }
+
+  &__button {
+    align-items: flex-end;
+    padding-right: toRem(10);
+    padding-left: toRem(10);
+    @media (min-width: $mobile) {
+      padding-bottom: toRem(50);
+      padding-right: toRem(40);
+      padding-left: toRem(40);
+    }
+
+    &::after {
+      margin-top: 0;
+      margin-bottom: toRem(5);
+    }
+  }
+}
+
 //========================================================================================================================================================
 //========================================================================================================================================================
 //========================================================================================================================================================
