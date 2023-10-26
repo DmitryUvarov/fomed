@@ -224,6 +224,10 @@
     grid-template-columns: repeat(auto-fill, minmax(toRem(380), 1fr));
     @include adaptiveValue("column-gap", 50, 30, 0, 1230, 991);
     row-gap: toRem(30);
+
+    @media (max-width: $mobile) {
+      grid-template-columns: 1fr;
+    }
   }
 
   &__item {
