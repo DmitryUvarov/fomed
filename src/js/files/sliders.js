@@ -1,5 +1,5 @@
 /*
-Документація по роботі у шаблоні: 
+Документація по роботі у шаблоні:
 Документація слайдера: https://swiperjs.com/
 Сніппет(HTML): swiper
 */
@@ -8,10 +8,10 @@
 // При необхідності підключаємо додаткові модулі слайдера, вказуючи їх у {} через кому
 // Приклад: { Navigation, Autoplay }
 import Swiper from 'swiper';
-import { Navigation } from 'swiper/modules';
+import { Scrollbar, Mousewheel  } from 'swiper/modules';
 /*
 Основні модулі слайдера:
-Navigation, Pagination, Autoplay, 
+Navigation, Pagination, Autoplay,
 EffectFade, Lazy, Manipulation
 Детальніше дивись https://swiperjs.com/
 */
@@ -28,9 +28,9 @@ import "../../scss/base/swiper.scss";
 function initSliders() {
 	// Список слайдерів
 	// Перевіряємо, чи є слайдер на сторінці
-	if (document.querySelector('.swiper')) { // Вказуємо склас потрібного слайдера
+	if (document.querySelector('.swiper123')) { // Вказуємо склас потрібного слайдера
 		// Створюємо слайдер
-		new Swiper('.swiper', { // Вказуємо склас потрібного слайдера
+		new Swiper('.swiper123', { // Вказуємо склас потрібного слайдера
 			// Підключаємо модулі слайдера
 			// для конкретного випадку
 			modules: [Navigation],
@@ -103,6 +103,53 @@ function initSliders() {
 			on: {
 
 			}
+		});
+	}
+
+
+
+	if (document.querySelector('.doctors__slider')) {
+		new Swiper('.doctors__slider', {
+			modules: [Scrollbar, Mousewheel],
+			observer: true,
+			observeParents: true,
+			slidesPerView: 4,
+			spaceBetween: 20,
+
+			speed: 500,
+			lazyPreloaderClass: 'preloader',
+
+			mousewheel: true,
+			sensitivity: 0.1,
+			thresholdDelta: 2,
+			eventsTarget: '.doctors__slider .swiper-wrapper',
+
+			scrollbar: {
+				el: '.doctors__slider .doctors__scrollbar',
+				draggable: true,
+				dragClass: "scrollbar__drag",
+			},
+
+			breakpoints: {
+				320: {
+					slidesPerView: 2,
+					spaceBetween: 15,
+				},
+				768: {
+					slidesPerView: 2,
+					spaceBetween: 20,
+				},
+				992: {
+					slidesPerView: 3,
+					spaceBetween: 20,
+				},
+				1230: {
+					slidesPerView: 4,
+					spaceBetween: 20,
+				},
+			},
+
+
 		});
 	}
 }

@@ -31,3 +31,63 @@
   font-weight: 400;
   line-height: 150%; /* 150% */
 }
+
+//========================================================================================================================================================
+
+.top-block {
+  display: flex;
+  align-items: flex-end;
+  @include adaptiveValue("column-gap", 80, 50, 0, 1230, 991);
+  @include adaptiveValue("column-gap", 50, 30, 1, 991, 375);
+  @include adaptiveValue("row-gap", 30, 20);
+  &__link {
+  }
+}
+
+//========================================================================================================================================================
+
+.scrollbar {
+  height: toRem(10);
+  background-color: rgba(60, 59, 59, 0.3);
+
+  &__drag {
+    position: relative;
+    height: 100%;
+    background-color: #3c3b3b;
+    cursor: grab;
+
+    &::before {
+      content: "";
+      position: absolute;
+      width: 100%;
+      height: calc(100% + toRem(10));
+      top: toRem(-5);
+    }
+  }
+}
+
+//========================================================================================================================================================
+
+.preloader {
+  position: absolute;
+  width: 100%;
+  height: 100%;
+  top: 0;
+  left: 0;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  background-color: rgba(158, 157, 157, 0.2);
+
+  &::before {
+    content: "";
+    background-image: var(--load);
+    background-repeat: no-repeat;
+    background-size: toRem(80);
+    background-position: center;
+    display: block;
+    width: toRem(80);
+    height: toRem(80);
+    animation: loader 1s linear infinite;
+  }
+}

@@ -330,5 +330,156 @@
 }
 
 //========================================================================================================================================================
+
+.doctors {
+  @include adaptiveValue("padding-top", 95, 40);
+  @include adaptiveValue("padding-bottom", 95, 40);
+  &__title {
+  }
+  &__container {
+  }
+
+  &__top {
+    @include adaptiveValue("margin-bottom", 60, 40);
+
+    @media (max-width: $mobile) {
+      justify-content: space-between;
+    }
+  }
+
+  &__title {
+  }
+
+  &__body {
+    display: grid;
+    grid-template-columns: calc(20% - toRem(15)) 80%;
+    gap: toRem(20);
+
+    @media (max-width: $pc) {
+      grid-template-columns: calc(25% - toRem(15)) 75%;
+    }
+    @media (max-width: $tablet) {
+      grid-template-columns: 1fr;
+    }
+  }
+
+  &__wrap {
+    @media (min-width: $tablet) {
+      padding-bottom: percent(292, 224);
+      height: fit-content;
+      position: relative;
+      z-index: 2;
+    }
+  }
+
+  &__text {
+    border: toRem(1) solid #3f7619;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    padding: toRem(20) toRem(11);
+
+    font-size: toRem(15);
+    line-height: 140%; /* 140% */
+
+    @media (min-width: $tablet) {
+      position: absolute;
+      width: 100%;
+      height: 100%;
+    }
+  }
+
+  &__slider {
+    position: relative;
+    min-width: 0;
+    height: fit-content;
+
+    @media (min-width: $mobile) {
+      &::before {
+        content: "";
+        position: absolute;
+        width: 100%;
+        height: 100%;
+        top: 0;
+        right: 100%;
+        background-color: #fff;
+        z-index: 1;
+      }
+    }
+
+    @media (any-hover: hover) {
+      &:hover {
+        .doctors__scrollbar {
+          opacity: 1;
+        }
+      }
+    }
+  }
+
+  &__wrapper {
+  }
+
+  &__slide {
+  }
+
+  &__scrollbar {
+    margin-top: toRem(10);
+    @media (any-hover: hover) {
+      opacity: 0;
+      margin-top: toRem(15);
+    }
+  }
+}
+
+.slide-doctors {
+  display: flex;
+  flex-direction: column;
+
+  &__image-ibg {
+    position: relative;
+    overflow: hidden;
+    display: block;
+    padding-bottom: percent(292, 224);
+    margin-bottom: toRem(10);
+
+    @media (any-hover: hover) {
+      &:hover {
+        img {
+          transform: scale(1.05);
+        }
+      }
+    }
+
+    img {
+      transition: all 0.3s ease 0s;
+    }
+  }
+
+  &__title {
+    flex: 1 1 auto;
+    @include adaptiveValue("font-size", 18, 16);
+    line-height: 150%; /* 27px */
+
+    transition: all 0.3s ease-in-out 0s;
+    @media (any-hover: hover) {
+      &:hover {
+        color: #3f7619;
+      }
+    }
+  }
+
+  &__post {
+    color: #9e9d9d;
+    font-size: 10px;
+    line-height: 140%; /* 14px */
+  }
+}
+
+@keyframes loader {
+  100% {
+    transform: rotate(360deg);
+  }
+}
+
 //========================================================================================================================================================
 //========================================================================================================================================================
