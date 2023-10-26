@@ -1,56 +1,230 @@
 //====================================================================================================
+.header {
+  position: absolute;
+  width: 100%;
+  top: 0;
+
+  &::before {
+    content: "";
+    position: absolute;
+    width: 100%;
+    height: 100%;
+    top: 0;
+    left: 0;
+    pointer-events: none;
+    z-index: 5;
+
+    .menu-open & {
+      transition: all 0.3s linear 0.3s;
+      box-shadow: rgba(100, 100, 111, 0.2) 0px 7px 29px 0px;
+      background-color: #b5b5a4;
+    }
+  }
+
+  &__container {
+  }
+
+  &__body {
+    padding: toRem(15) 0;
+    display: flex;
+    flex-wrap: wrap;
+    align-items: center;
+    @include adaptiveValue("column-gap", 30, 20, 0, 1230, 991);
+
+    @media (min-width: $mobile) and (max-width: $tablet) {
+      justify-content: space-between;
+    }
+    @media (min-width: $mobile) {
+      row-gap: toRem(10);
+      min-height: toRem(104);
+    }
+  }
+
+  &__logo {
+    position: relative;
+    z-index: 5;
+    max-width: toRem(130);
+    transition: all 0.3s ease 0s;
+
+    img {
+      max-width: 100%;
+    }
+
+    @media (any-hover: hover) {
+      &:hover {
+        opacity: 0.7;
+      }
+    }
+  }
+
+  &__menu {
+    flex: 1 1 auto;
+
+    @media (max-width: $tablet) {
+      flex-basis: 100%;
+    }
+  }
+
+  &__link {
+    position: relative;
+    z-index: 5;
+
+    @include adaptiveValue("font-size", 50, 40, 0, 767, 375);
+    color: #ffffff;
+    transition: all 0.3s ease-in-out 0s;
+    @media (min-width: $tablet) {
+      order: 3;
+    }
+
+    @media (max-width: $mobile) {
+      margin-left: auto;
+    }
+
+    @media (any-hover: hover) {
+      &:hover {
+        color: #3f7619;
+      }
+    }
+  }
+
+  &__icon {
+  }
+}
+
+.menu {
+  color: #fff;
+  line-height: 140%; /* 140% */
+  &__body {
+    @media (max-width: $mobile) {
+      position: fixed;
+      width: 100%;
+      height: 100%;
+      top: 0;
+      left: -100%;
+      overflow: auto;
+      background-color: #b5b5a4;
+      transition: left 0.3s linear 0s;
+      z-index: 4;
+
+      padding: toRem(105) toRem(15) toRem(40);
+
+      .menu-open & {
+        left: 0;
+      }
+    }
+  }
+
+  &__list {
+    display: flex;
+    align-items: center;
+    @include adaptiveValue("column-gap", 30, 15, 0, 1230, 991);
+    row-gap: toRem(15);
+
+    @media (max-width: $mobile) {
+      flex-direction: column;
+      align-items: flex-start;
+    }
+  }
+
+  &__item {
+    &_number {
+      font-family: "Inter";
+      font-weight: 400;
+      line-height: 130%; /* 20.8px */
+
+      @media (min-width: $mobile) {
+        margin-left: auto;
+      }
+    }
+  }
+
+  &__link {
+    font-family: "Helvetica";
+    display: inline-block;
+    padding: toRem(5) 0;
+    font-size: toRem(15);
+    transition: all 0.3s ease-in-out 0s;
+
+    @media (max-width: $mobile) {
+      font-size: toRem(30);
+    }
+
+    position: relative;
+    &::before {
+      content: "";
+      position: absolute;
+      width: 0;
+      height: 1px;
+      right: 0;
+      bottom: 0;
+      background-color: #3f7619;
+      transition: all 0.3s ease-in-out 0s;
+      left: auto;
+    }
+
+    @media (any-hover: hover) {
+      &:hover {
+        color: #3f7619;
+        &::before {
+          width: 100%;
+          left: 0;
+          right: auto;
+        }
+      }
+    }
+  }
+}
 
 //====================================================================================================
 
 //Burger
-/*
+
 .icon-menu {
-	display: none;
-	@media (max-width: $mobile) {
-		display: block;
-		position: relative;
-		width: toRem(30);
-		height: toRem(18);
-		z-index: 5;
-		@media (any-hover: none) {
-			cursor: default;
-		}
-		span,
-		&::before,
-		&::after {
-			content: "";
-			transition: all 0.3s ease 0s;
-			right: 0;
-			position: absolute;
-			width: 100%;
-			height: toRem(2);
-			background-color: #000;
-		}
-		&::before {
-			top: 0;
-		}
-		&::after {
-			bottom: 0;
-		}
-		span {
-			top: calc(50% - toRem(1));
-		}
-		.menu-open & {
-			span {
-				width: 0;
-			}
-			&::before,
-			&::after {
-			}
-			&::before {
-				top: calc(50% - toRem(1));
-				transform: rotate(-45deg);
-			}
-			&::after {
-				bottom: calc(50% - toRem(1));
-				transform: rotate(45deg);
-			}
-		}
-	}
+  display: none;
+  @media (max-width: $mobile) {
+    display: block;
+    position: relative;
+    width: toRem(30);
+    height: toRem(24);
+    z-index: 5;
+    @media (any-hover: none) {
+      cursor: default;
+    }
+    span,
+    &::before,
+    &::after {
+      content: "";
+      transition: all 0.3s ease 0s;
+      right: 0;
+      position: absolute;
+      width: 100%;
+      height: toRem(3);
+      background-color: #0bb719;
+    }
+    &::before {
+      top: 0;
+    }
+    &::after {
+      bottom: 0;
+    }
+    span {
+      top: calc(50% - toRem(1.5));
+    }
+    .menu-open & {
+      span {
+        width: 0;
+      }
+      &::before,
+      &::after {
+      }
+      &::before {
+        top: calc(50% - toRem(1.5));
+        transform: rotate(-45deg);
+      }
+      &::after {
+        bottom: calc(50% - toRem(1.5));
+        transform: rotate(45deg);
+      }
+    }
+  }
 }
-*/
