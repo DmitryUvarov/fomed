@@ -12,6 +12,8 @@
     background-color: rgba(0, 0, 0, 0.4);
     z-index: 1;
 
+    pointer-events: none;
+
     @media (min-width: $mobile) {
       display: none;
     }
@@ -91,6 +93,7 @@
     left: 0;
 
     z-index: -1;
+    pointer-events: none;
 
     img {
       object-position: right;
