@@ -2,13 +2,78 @@
 // Сніппет (HTML): btn
 
 .button {
-	display: inline-flex;
-	padding: 0px 0px;
-	@media (any-hover: hover) {
-		&:hover {
-		}
-	}
-	&--fw {
-		width: 100%;
-	}
+  position: relative;
+  display: inline-flex;
+  justify-content: center;
+  //   align-items: center;
+  text-align: left;
+  column-gap: toRem(50);
+  padding: toRem(40) toRem(20) toRem(10);
+  height: toRem(82);
+
+  background-color: #fff;
+  color: #3c3b3b;
+  font-family: Helvetica;
+  font-size: toRem(18);
+  font-weight: 400;
+  line-height: 150%; /* 150% */
+  transition: all 0.3s ease-in-out 0s;
+  border: toRem(1) solid transparent;
+
+  @media (max-width: $mobile) {
+    min-height: toRem(70);
+    height: auto;
+    font-size: toRem(16);
+  }
+
+  &::after {
+    content: "\e900";
+    @extend %ic;
+    font-size: toRem(13);
+    transition: transform 0.3s ease-in-out;
+    margin-top: toRem(7);
+  }
+  @media (any-hover: hover) {
+    &:hover {
+      color: #fff;
+      background-color: #3f7619;
+
+      &::after {
+        position: relative;
+        transform: translate(toRem(10), toRem(-35));
+
+        @media (max-width: $mobile) {
+          transform: translate(toRem(10), toRem(-30));
+        }
+      }
+    }
+  }
+  &--fw {
+    width: 100%;
+  }
+
+  &_green {
+    color: #fff;
+    background-color: #3f7619;
+
+    @media (any-hover: hover) {
+      &:hover {
+        background-color: #fff;
+        color: #3c3b3b;
+      }
+    }
+  }
+
+  &_green_line {
+    color: #3c3b3b;
+    background-color: #fff;
+    border: toRem(1) solid #3f7619;
+    @media (any-hover: hover) {
+      &:hover {
+        border-color: #fff;
+        background-color: #3f7619;
+        color: #fff;
+      }
+    }
+  }
 }

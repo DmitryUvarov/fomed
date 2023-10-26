@@ -1,1 +1,11 @@
 // Заголовки, загальні БЕМ блоки та інше...
+
+.text {
+  font-family: Helvetica;
+  @include adaptiveValue("font-size", 18, 17);
+  font-weight: 400;
+  line-height: 150%; /* 150% */
+  &_white {
+    color: #fff;
+  }
+}
