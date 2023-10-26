@@ -4,12 +4,11 @@
 .button {
   position: relative;
   display: inline-flex;
-  justify-content: center;
-  //   align-items: center;
   text-align: left;
   column-gap: toRem(50);
   padding: toRem(40) toRem(20) toRem(10);
-  height: toRem(82);
+  // height: toRem(82);
+  min-height: toRem(82);
 
   background-color: #fff;
   color: #3c3b3b;

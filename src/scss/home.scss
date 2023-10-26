@@ -102,3 +102,114 @@
 }
 
 //====================================================================================================
+
+.head-physician {
+  @include adaptiveValue("padding-top", 190, 60);
+  @include adaptiveValue("padding-bottom", 95, 40);
+  &__title {
+    &:not(:last-child) {
+      @include adaptiveValue("margin-bottom", 60, 40);
+    }
+  }
+
+  &__body {
+    display: grid;
+    grid-template-columns: repeat(2, 1fr);
+    @include adaptiveValue("gap", 50, 30, 0, 1230, 991);
+
+    @media (max-width: $tablet) {
+      grid-template-columns: 4fr 6fr;
+    }
+    @media (max-width: $mobile) {
+      grid-template-columns: 1fr;
+    }
+  }
+
+  &__image-ibg {
+    height: fit-content;
+    padding-bottom: percent(754, 574);
+
+    @media (min-width: $mobile) {
+      position: sticky;
+      top: toRem(20);
+    }
+  }
+
+  &__contents {
+    display: flex;
+    flex-direction: column;
+    justify-content: space-between;
+  }
+
+  &__name {
+    @include adaptiveValue("font-size", 55, 30);
+    line-height: 123.345%; /* 123.345% */
+
+    &:not(:last-child) {
+      @include adaptiveValue("margin-bottom", 30, 20);
+    }
+  }
+
+  &__header {
+    &:not(:last-child) {
+      @include adaptiveValue("margin-bottom", 30, 20);
+    }
+  }
+
+  &__text {
+    &:not(:last-child) {
+      @include adaptiveValue("margin-bottom", 60, 40);
+    }
+  }
+
+  &__buttons {
+    display: flex;
+    flex-wrap: wrap;
+    gap: toRem(20);
+  }
+  &__button {
+    flex: 1 1 auto;
+  }
+
+  &__numbers {
+    @include adaptiveValue("margin-top", 90, 50);
+  }
+}
+
+.numbers {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(toRem(300), 1fr));
+  border-top: toRem(1) solid #3f7619;
+  border-left: toRem(1) solid #3f7619;
+  &__item {
+    padding-bottom: toRem(45);
+    @include adaptiveValue("padding-left", 20, 15);
+    @include adaptiveValue("padding-right", 20, 15);
+    @include adaptiveValue("padding-top", 120, 35, 0, 1230, 767);
+    border-right: toRem(1) solid #3f7619;
+    border-bottom: toRem(1) solid #3f7619;
+
+    @media (max-width: $mobile) {
+      padding-bottom: toRem(35);
+    }
+  }
+
+  &__item-num {
+    color: #3f7619;
+    text-align: center;
+    @include adaptiveValue("font-size", 86, 56);
+    line-height: 118.326%; /* 118.326% */
+  }
+
+  &__item-text {
+    text-align: center;
+    font-size: toRem(18);
+    line-height: 150%; /* 27px */
+  }
+}
+
+//========================================================================================================================================================
+//========================================================================================================================================================
+//========================================================================================================================================================
+//========================================================================================================================================================
+//========================================================================================================================================================

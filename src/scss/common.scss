@@ -8,4 +8,26 @@
   &_white {
     color: #fff;
   }
+
+  p {
+    &:not(:last-child) {
+      @include adaptiveValue("margin-bottom", 20, 15);
+    }
+  }
+}
+
+.title {
+  color: #3c3b3b;
+  font-family: Helvetica;
+  @include adaptiveValue("font-size", 50, 34);
+  font-weight: 400;
+  line-height: 106%; /* 106% */
+}
+
+.text-2 {
+  color: #3c3b3b;
+  font-family: Helvetica;
+  @include adaptiveValue("font-size", 24, 20);
+  font-weight: 400;
+  line-height: 150%; /* 150% */
 }
