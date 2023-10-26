@@ -178,7 +178,7 @@
 
 .numbers {
   display: grid;
-  grid-template-columns: repeat(auto-fit, minmax(toRem(300), 1fr));
+  grid-template-columns: repeat(auto-fill, minmax(toRem(300), 1fr));
   border-top: toRem(1) solid #3f7619;
   border-left: toRem(1) solid #3f7619;
   &__item {
@@ -209,6 +209,85 @@
 }
 
 //========================================================================================================================================================
+
+.services {
+  @include adaptiveValue("padding-top", 95, 40);
+  @include adaptiveValue("padding-bottom", 95, 40);
+  &__title {
+    &:not(:last-child) {
+      @include adaptiveValue("margin-bottom", 60, 40);
+    }
+  }
+
+  &__items {
+    display: grid;
+    grid-template-columns: repeat(auto-fill, minmax(toRem(380), 1fr));
+    @include adaptiveValue("column-gap", 50, 30, 0, 1230, 991);
+    row-gap: toRem(30);
+  }
+
+  &__item {
+  }
+}
+
+.item-services {
+  position: relative;
+  overflow: hidden;
+
+  @media (any-hover: hover) {
+    &:hover {
+      img {
+        transform: scale(1.05);
+      }
+    }
+  }
+
+  &__title {
+    position: absolute;
+    @include adaptiveValue("left", 40, 20);
+    @include adaptiveValue("padding-right", 40, 20);
+    @include adaptiveValue("bottom", 50, 30);
+    z-index: 2;
+  }
+
+  &__title-link {
+    position: relative;
+    color: #fff;
+    @include adaptiveValue("font-size", 24, 22);
+    line-height: 150%; /* 150% */
+
+    display: flex;
+    align-items: center;
+    flex-direction: row-reverse;
+    column-gap: toRem(10);
+    transition: all 0.3s ease 0s;
+    &::before {
+      font-size: toRem(12);
+      transition: transform 0.3s ease 0s;
+    }
+
+    @media (any-hover: hover) {
+      &:hover {
+        color: #3f7619;
+
+        &::before {
+          transform: translate(-2px, 2px);
+        }
+      }
+    }
+  }
+
+  &__image-ibg {
+    display: block;
+    padding-bottom: percent(500, 575);
+    z-index: 1;
+
+    img {
+      transition: transform 0.3s ease-in-out 0s;
+    }
+  }
+}
+
 //========================================================================================================================================================
 //========================================================================================================================================================
 //========================================================================================================================================================
