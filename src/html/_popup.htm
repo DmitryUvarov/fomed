@@ -1,10 +1,20 @@
 <div id="popup" aria-hidden="true" class="popup">
 	<div class="popup__wrapper">
 		<div class="popup__content">
-			<button data-close type="button" class="popup__close">Закрити</button>
-			<div class="popup__text">
-				Text
-			</div>
+			<button data-close type="button" class="popup__close">закрыть</button>
+			<form action="#" class="submit__form form-submit">
+				<h4 class="form-submit__title text-3">Оставьте свои данные и наш менеджер свяжется с вами в ближайшее время!</h4>
+				<div class="form-submit__inputs">
+					<input autocomplete="off" type="text" name="name" placeholder="Ваше имя*" class="form-submit__input input">
+					<input autocomplete="off" type="text" name="phone" placeholder="Ваш телефон*" class="form-submit__input input">
+					<input autocomplete="off" type="text" name="where" placeholder="К какому врачу вы хотели бы записаться?" class="form-submit__input input">
+				</div>
+				<div class="form-submit__buttons">
+					<button class="form-submit__button button">Получить консультацию</button>
+					<button class="form-submit__button button button_line">О клинике</button>
+				</div>
+			</form>
+			<div class="popup__image-ibg"><img src="@img/popup/01.jpg" alt=""></div>
 		</div>
 	</div>
 </div>

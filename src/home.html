@@ -23,7 +23,7 @@
 								Бережный подход к вашей красоте и здоровью.</p>
 						</div>
 						<div class="hero__buttons">
-							<button class="hero__button button">Записаться на прием</button>
+							<button data-popup="#popup" class="hero__button button">Записаться на прием</button>
 							<button class="hero__button button button_green">Подписаться на Instagram главного врача</button>
 						</div>
 					</div>
@@ -246,16 +246,9 @@
 			"image__link":"img/submit/01.jpg"
 			})
 
-			<!-- <section class="test">
-				<div class="test__container">
-					<div class="test__body">
-
-					</div>
-				</div>
-			</section> -->
-
 		</main>
 		@@include('html/_footer.htm',{})
+		@@include('html/_popup.htm',{})
 	</div>
 	@@include('html/_js.htm',{})
 </body>
