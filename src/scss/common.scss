@@ -107,3 +107,36 @@
 }
 
 //========================================================================================================================================================
+
+.link {
+  color: #000;
+  font-family: Helvetica;
+  @include adaptiveValue("font-size", 24, 20);
+  font-weight: 400;
+  line-height: 150%; /* 150% */
+
+  display: flex;
+  align-items: center;
+  column-gap: toRem(10);
+
+  transition: all 0.3s ease 0s;
+  &::after {
+    content: "\e900";
+    @extend %ic;
+    font-size: toRem(12);
+    transform: translateY(toRem(4));
+    transition: transform 0.3s ease 0s;
+  }
+
+  @media (any-hover: hover) {
+    &:hover {
+      color: #3f7619;
+
+      &::after {
+        transform: rotate(47deg) translateY(toRem(4));
+      }
+    }
+  }
+}
+
+//========================================================================================================================================================
