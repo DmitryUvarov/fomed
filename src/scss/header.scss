@@ -22,6 +22,15 @@
     }
   }
 
+  &_black {
+    position: relative;
+
+    .menu__link,
+    .header__link {
+      color: #3c3b3b;
+    }
+  }
+
   &__container {
   }
 

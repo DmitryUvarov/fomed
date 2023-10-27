@@ -99,11 +99,36 @@
   height: toRem(60);
   color: #fff;
   font-family: "Inter";
-  font-size: 18px;
+  font-size: toRem(18);
   font-weight: 600;
   line-height: 122.2%; /* 22/18 */
   padding: toRem(5) toRem(10);
   width: 100%;
+  transition: all 0.3s ease-in-out;
+
+  @media (any-hover: hover) {
+    &:hover {
+      background-color: #3f7619;
+      color: #fff;
+    }
+  }
+}
+
+.button-line {
+  display: inline-flex;
+  justify-content: center;
+  align-items: center;
+  border: toRem(1) solid #3f7619;
+  height: toRem(60);
+  padding: toRem(5) toRem(10);
+  width: 100%;
+
+  color: #3c3b3b;
+  font-family: Helvetica;
+  font-size: toRem(18);
+  font-weight: 400;
+  line-height: 150%; /* 150% */
+
   transition: all 0.3s ease-in-out;
 
   @media (any-hover: hover) {
