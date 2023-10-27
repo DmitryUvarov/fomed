@@ -808,3 +808,58 @@
 }
 
 //========================================================================================================================================================
+
+.reviews {
+  @include adaptiveValue("padding-top", 130, 60);
+  @include adaptiveValue("padding-bottom", 130, 60);
+  &__container {
+  }
+
+  &__items {
+    display: grid;
+    @include adaptiveValue("column-gap", 62, 30, 0, 1230, 991);
+    @include adaptiveValue("row-gap", 40, 30, 0, 1230, 991);
+    grid-template-columns: repeat(auto-fill, minmax(toRem(200), 1fr));
+
+    &:not(:last-child) {
+      @include adaptiveValue("margin-bottom", 60, 35);
+    }
+
+    @media (max-width: $mobile) {
+      grid-template-columns: repeat(2, 1fr);
+      gap: toRem(15);
+    }
+  }
+
+  &__item-ibg {
+    position: relative;
+    overflow: hidden;
+    padding-bottom: percent(300, 255);
+
+    img {
+      transition: all 0.3s ease 0s;
+    }
+
+    @media (any-hover: hover) {
+      &:hover {
+        img {
+          transform: scale(1.05);
+        }
+      }
+    }
+
+    &::before {
+      position: absolute;
+      top: 50%;
+      left: 50%;
+      transform: translate(-50%, -50%);
+      z-index: 2;
+      color: #9e9d9d;
+    }
+  }
+
+  &__button {
+  }
+}
+
+//========================================================================================================================================================

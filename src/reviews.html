@@ -1,0 +1,46 @@
+<!DOCTYPE html>
+<html lang="en">
+@@include('html/_head.htm',{
+"title":"О клинике"
+})
+
+<body>
+    <div class="wrapper">
+        @@include('html/_header.htm',{})
+        <main class="page">
+
+            <section class="hero">
+                <div class="hero__container">
+                    <div class="hero__body">
+                        <h1 class="hero__title">Отзывы наших пациентов</h1>
+                    </div>
+                    <div class="hero__bg-ibg"><img src="@img/hero/06.jpg" alt=""></div>
+                </div>
+            </section>
+
+            <section class="reviews">
+                <div class="reviews__container">
+                    <div class="reviews__items">
+                        <a href="https://www.youtube.com/watch?v=RzVvThhjAKw" data-fancybox class="reviews__item-ibg play"><img src="@img/reviews/01.jpg" alt=""></a>
+                        <a href="https://www.youtube.com/watch?v=RzVvThhjAKw" data-fancybox class="reviews__item-ibg play"><img src="@img/reviews/02.jpg" alt=""></a>
+                        <a href="https://www.youtube.com/watch?v=RzVvThhjAKw" data-fancybox class="reviews__item-ibg play"><img src="@img/reviews/01.jpg" alt=""></a>
+                        <a href="https://www.youtube.com/watch?v=RzVvThhjAKw" data-fancybox class="reviews__item-ibg play"><img src="@img/reviews/02.jpg" alt=""></a>
+                    </div>
+                    <button class="reviews__button button-black">Еще отзывы</button>
+                </div>
+            </section>
+
+
+
+            @@include('html/_submit.htm',{
+            "image__link":"img/submit/01.jpg"
+            })
+
+
+        </main>
+        @@include('html/_footer.htm',{})
+    </div>
+    @@include('html/_js.htm',{})
+</body>
+
+</html>

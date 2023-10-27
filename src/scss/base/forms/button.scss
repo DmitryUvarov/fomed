@@ -90,3 +90,26 @@
     }
   }
 }
+
+.button-black {
+  display: inline-flex;
+  justify-content: center;
+  align-items: center;
+  background-color: #3c3b3b;
+  height: toRem(60);
+  color: #fff;
+  font-family: "Inter";
+  font-size: 18px;
+  font-weight: 600;
+  line-height: 122.2%; /* 22/18 */
+  padding: toRem(5) toRem(10);
+  width: 100%;
+  transition: all 0.3s ease-in-out;
+
+  @media (any-hover: hover) {
+    &:hover {
+      background-color: #3f7619;
+      color: #fff;
+    }
+  }
+}
