@@ -30,6 +30,10 @@
   @include adaptiveValue("font-size", 24, 20);
   font-weight: 400;
   line-height: 150%; /* 150% */
+
+  &_white {
+    color: #fff;
+  }
 }
 
 .text-3 {
@@ -38,6 +42,10 @@
   @include adaptiveValue("font-size", 36, 24);
   font-weight: 400;
   line-height: 120%; /* 43.2px */
+
+  &_white {
+    color: #fff;
+  }
 }
 
 //========================================================================================================================================================

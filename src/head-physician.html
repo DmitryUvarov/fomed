@@ -1,0 +1,101 @@
+<!DOCTYPE html>
+<html lang="en">
+@@include('html/_head.htm',{
+"title":"HomePage"
+})
+
+<body>
+    <div class="wrapper">
+        @@include('html/_header.htm',{})
+        <main class="page">
+
+            <section class="hero hero_doctor">
+                <div class="hero__container">
+                    <div class="hero__body">
+                        <div class="hero__image"><img src="@img/hero/small01.png" alt=""></div>
+                        <h1 class="hero__name">Облокулов Фахриддин Одилович</h1>
+                        <div class="hero__text text-2 text-2_white">
+                            <p>Врач-пластический хирург высшей категории,
+                                стаж больше 20 лет</p>
+                        </div>
+                        <div class="hero__buttons">
+                            <button class="hero__button button">Записаться на прием</button>
+                            <button class="hero__button button button_green">Подписаться на Instagram главного врача</button>
+                        </div>
+                    </div>
+                    <div class="hero__bg-ibg"><img src="@img/hero/02.jpg" alt=""></div>
+                </div>
+            </section>
+
+            <section class="for-patients">
+                <div class="for-patients__container">
+                    <h2 class="for-patients__title title">Пациентам</h2>
+                    <div class="for-patients__items">
+                        <div class="for-patients__item">
+                            <a href="#" class="for-patients__link link">Сертификаты и лицензии</a>
+                            <div class="for-patients__text text">
+                                <p>Для нас Важно, что бы каждый пациент получил
+                                    высококвалифицированную помощь наших врачей-
+                                    специалистов, а также, высокий уровень сервиса.</p>
+                            </div>
+                        </div>
+                        <div class="for-patients__item">
+                            <a href="#" class="for-patients__link link">Отзывы пациентов</a>
+                            <div class="for-patients__text text">
+                                <p>Результаты операций, фото пациентов До и После
+                                    хирургических вмешательств</p>
+                            </div>
+                        </div>
+                        <div class="for-patients__item">
+                            <a href="#" class="for-patients__link link">Наши социальные сети</a>
+                            <div class="for-patients__text text">
+                                <p>Рассказываем о трендах и антитрендах в области пластической хирургии, показываем кейсы работ и делимся моментами из жизни клиники </p>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </section>
+
+            <section class="test">
+                <div class="test__container">
+                    <div class="test__body">
+
+                    </div>
+                </div>
+            </section>
+
+            <section class="reviews-block">
+                <div class="reviews-block__container">
+                    <h2 class="reviews-block__title title">Отзывы</h2>
+                    <div class="reviews-block__body">
+                        <div class="reviews-block__image-ibg--contain"><img src="@img/reviews_block/01.jpg" alt=""></div>
+                        <a href="#" class="reviews-block__button button button_green button_green_line">Посмотреть отзывы пациентов</a>
+                    </div>
+                </div>
+            </section>
+
+            <section class="test">
+                <div class="test__container">
+                    <div class="test__body">
+
+                    </div>
+                </div>
+            </section>
+
+            @@include('html/_submit.htm',{})
+
+            <!-- <section class="test">
+				<div class="test__container">
+					<div class="test__body">
+
+					</div>
+				</div>
+			</section> -->
+
+        </main>
+        @@include('html/_footer.htm',{})
+    </div>
+    @@include('html/_js.htm',{})
+</body>
+
+</html>
