@@ -61,6 +61,14 @@
   }
 
   &__title {
+    display: flex;
+    column-gap: toRem(10);
+    align-items: center;
+    &::after {
+      content: "\e900";
+      @extend %ic;
+      font-size: toRem(13);
+    }
   }
 
   &__text {
