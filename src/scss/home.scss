@@ -775,4 +775,35 @@
 }
 
 //========================================================================================================================================================
+
+.share-cases {
+  @include adaptiveValue("padding-top", 95, 40);
+  @include adaptiveValue("padding-bottom", 95, 40);
+
+  &__body {
+    display: grid;
+    grid-template-columns: repeat(2, 1fr);
+    @include adaptiveValue("gap", 50, 30, 0, 1230, 991);
+
+    @media (max-width: $mobile) {
+      grid-template-columns: 1fr;
+    }
+  }
+
+  &__content {
+  }
+
+  &__title {
+    @include adaptiveValue("margin-bottom", 30, 25);
+  }
+
+  &__link {
+  }
+
+  &__image-ibg {
+    height: fit-content;
+    padding-bottom: 100%;
+  }
+}
+
 //========================================================================================================================================================
