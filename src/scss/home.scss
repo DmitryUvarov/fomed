@@ -475,11 +475,98 @@
   }
 }
 
-@keyframes loader {
-  100% {
-    transform: rotate(360deg);
+//========================================================================================================================================================
+
+.about {
+  @include adaptiveValue("padding-top", 95, 40);
+  @include adaptiveValue("padding-bottom", 95, 40);
+
+  &__title {
+    @include adaptiveValue("margin-bottom", 60, 40);
+  }
+
+  &__body {
+    position: relative;
+    display: flex;
+    justify-content: flex-end;
+
+    @media (min-width: $tablet) {
+      padding-top: toRem(40);
+    }
+  }
+
+  &__image-ibg {
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: percent(800, 1200);
+    padding-bottom: percent(800, 1200);
+    z-index: -1;
+
+    @media (max-width: $tablet) {
+      display: none;
+    }
+  }
+
+  &__content {
+    border: toRem(1) solid #3f7619;
+    background-color: #fff;
+
+    @include adaptiveValue("padding-top", 65, 35);
+    @include adaptiveValue("padding-bottom", 45, 25);
+    @include adaptiveValue("padding-left", 35, 15);
+    @include adaptiveValue("padding-right", 35, 15);
+
+    @media (min-width: $tablet) {
+      max-width: toRem(800);
+    }
+  }
+
+  &__name {
+    @include adaptiveValue("margin-bottom", 30, 20);
+  }
+
+  &__text {
+    @include adaptiveValue("margin-bottom", 60, 20);
+  }
+
+  &__items {
+    display: grid;
+    align-items: center;
+    grid-template-columns: 1fr auto 1fr auto;
+    @include adaptiveValue("row-gap", 65, 20, 0, 1230, 767);
+    column-gap: toRem(12);
+
+    @include adaptiveValue("margin-bottom", 60, 40);
+
+    @media (max-width: $mobile) {
+      grid-template-columns: 1fr;
+    }
+  }
+
+  &__item-num {
+    color: #3f7619;
+    @include adaptiveValue("font-size", 76, 66);
+    line-height: 118%; /* 118.326% */
+  }
+
+  &__item-text {
+    color: #000;
+    font-size: 18px;
+    line-height: 150%; /* 150% */
+  }
+
+  &__buttons {
+    display: flex;
+    flex-wrap: wrap;
+    gap: toRem(20);
+  }
+
+  &__button {
+    @media (max-width: $mobile) {
+      flex: 1 1 auto;
+    }
   }
 }
 
-//========================================================================================================================================================
 //========================================================================================================================================================
