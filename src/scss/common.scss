@@ -66,6 +66,10 @@
   height: toRem(10);
   background-color: rgba(60, 59, 59, 0.3);
 
+  &:active {
+    opacity: 1;
+  }
+
   &__drag {
     position: relative;
     height: 100%;
