@@ -631,6 +631,7 @@
 
   &__item {
     display: grid;
+    align-items: flex-start;
     grid-template-columns: repeat(2, 1fr);
     gap: toRem(30);
     @include adaptiveValue("padding-top", 55, 25);

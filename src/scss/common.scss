@@ -191,3 +191,31 @@
 }
 
 //========================================================================================================================================================
+
+.navigation {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  @include adaptiveValue("gap", 30, 10);
+
+  pointer-events: none;
+
+  &__arrow {
+    pointer-events: all;
+    color: #3f7619;
+    @include adaptiveValue("font-size", 104, 55);
+    transition: all 0.3s ease-in-out 0s;
+
+    @media (any-hover: hover) {
+      &:hover {
+        transform: scale(1.05);
+      }
+    }
+
+    &.swiper-button-disabled {
+      opacity: 0.4;
+    }
+  }
+}
+
+//========================================================================================================================================================

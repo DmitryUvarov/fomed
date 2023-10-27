@@ -8,7 +8,7 @@
 // При необхідності підключаємо додаткові модулі слайдера, вказуючи їх у {} через кому
 // Приклад: { Navigation, Autoplay }
 import Swiper from 'swiper';
-import { Scrollbar, Mousewheel  } from 'swiper/modules';
+import { Scrollbar, Mousewheel, Navigation  } from 'swiper/modules';
 /*
 Основні модулі слайдера:
 Navigation, Pagination, Autoplay,
@@ -109,19 +109,23 @@ function initSliders() {
 
 
 	if (document.querySelector('.doctors__slider')) {
+		let countSlides = 4
+		if (document.querySelector('.doctors__slider.doctors__slider_more')) {
+			countSlides = 5;
+			console.log('1');
+		}
+
 		new Swiper('.doctors__slider', {
 			modules: [Scrollbar, Mousewheel],
 			observer: true,
 			observeParents: true,
-			slidesPerView: 4,
-			spaceBetween: 20,
-
 			speed: 500,
 			lazyPreloaderClass: 'preloader',
 
 			mousewheel: true,
 			sensitivity: 0.1,
 			thresholdDelta: 2,
+			releaseOnEdges: true,
 			eventsTarget: '.doctors__slider .swiper-wrapper',
 
 			scrollbar: {
@@ -144,11 +148,31 @@ function initSliders() {
 					spaceBetween: 20,
 				},
 				1230: {
-					slidesPerView: 4,
+					slidesPerView: countSlides,
 					spaceBetween: 20,
 				},
 			},
 
+
+		});
+	}
+
+
+	if (document.querySelector('.beforeafter__slider')) {
+		new Swiper('.beforeafter__slider', {
+			modules: [Navigation],
+			observer: true,
+			observeParents: true,
+			slidesPerView: 1,
+			spaceBetween: 20,
+
+			speed: 500,
+			lazyPreloaderClass: 'preloader',
+
+			navigation: {
+				prevEl: '.beforeafter__slider .button-prev',
+				nextEl: '.beforeafter__slider .button-next',
+			},
 
 		});
 	}
