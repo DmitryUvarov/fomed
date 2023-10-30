@@ -7,7 +7,7 @@
   text-align: left;
   column-gap: toRem(10);
   padding: toRem(40) toRem(20) toRem(10);
-  // height: toRem(82);
+
   min-height: toRem(82);
 
   background-color: #fff;
@@ -20,7 +20,9 @@
   border: toRem(1) solid transparent;
 
   @media (max-width: $mobile) {
-    min-height: toRem(70);
+    min-height: toRem(52);
+    padding-top: toRem(20);
+    padding-bottom: toRem(5);
     height: auto;
     font-size: toRem(16);
   }
@@ -42,7 +44,7 @@
         transform: translate(toRem(10), toRem(-35));
 
         @media (max-width: $mobile) {
-          transform: translate(toRem(10), toRem(-30));
+          transform: translate(toRem(10), toRem(-20));
         }
       }
     }

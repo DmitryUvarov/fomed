@@ -53,10 +53,24 @@
 .top-block {
   display: flex;
   align-items: flex-end;
-  @include adaptiveValue("column-gap", 80, 50, 0, 1230, 991);
-  @include adaptiveValue("column-gap", 50, 30, 1, 991, 375);
+  column-gap: toRem(20);
   @include adaptiveValue("row-gap", 30, 20);
   &__link {
+    min-height: toRem(47);
+    padding-top: toRem(10);
+    padding-bottom: toRem(5);
+
+    @media (any-hover: hover) {
+      &:hover {
+        &::after {
+          transform: translate(toRem(10), toRem(-5));
+
+          @media (max-width: $mobile) {
+            transform: translate(toRem(10), toRem(-5));
+          }
+        }
+      }
+    }
   }
 }
 

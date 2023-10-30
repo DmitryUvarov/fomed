@@ -21,13 +21,13 @@
   }
 
   &_doctor {
-    @media (max-width: $pc) {
-      .hero__bg-ibg img {
-        object-position: center;
-      }
-    }
     @media (max-width: $mobile) {
-      background-color: #b5b5a4;
+      background-color: #fff;
+
+      &::after {
+        display: none;
+      }
+
       .hero__bg-ibg {
         display: none;
       }
@@ -41,6 +41,15 @@
       .hero__button {
         min-width: toRem(284);
         justify-content: space-between;
+        background-color: #3f7619;
+        color: #fff;
+        min-height: toRem(65);
+        padding-top: toRem(30);
+      }
+
+      .hero__name,
+      .hero__text {
+        color: #3c3b3b;
       }
     }
   }
@@ -85,23 +94,38 @@
       display: flex;
       flex-direction: column;
     }
+
+    &_center {
+      display: flex;
+      flex-direction: column;
+      justify-content: center;
+
+      @include adaptiveValue("padding-top", 150, 125);
+      @include adaptiveValue("padding-bottom", 150, 125);
+    }
   }
 
   &__title {
     color: #fff;
     font-family: Helvetica;
-    @include adaptiveValue("font-size", 120, 40);
+    @include adaptiveValue("font-size", 120, 36);
     font-weight: 300;
     line-height: 106%; /* 106% */
 
     &:not(:last-child) {
-      @include adaptiveValue("margin-bottom", 30, 25);
+      @include adaptiveValue("margin-bottom", 30, 10);
+    }
+
+    &_space {
+      &:not(:last-child) {
+        @include adaptiveValue("margin-bottom", 100, 10);
+      }
     }
   }
 
   &__text {
     max-width: toRem(575);
-
+    @include adaptiveValue("font-size", 24, 16);
     &:not(:last-child) {
       @include adaptiveValue("margin-bottom", 60, 40);
     }
@@ -111,10 +135,10 @@
     max-width: toRem(595);
 
     color: #fff;
-    @include adaptiveValue("font-size", 55, 40);
+    @include adaptiveValue("font-size", 55, 36);
     line-height: 123%; /* 123.345% */
     &:not(:last-child) {
-      @include adaptiveValue("margin-bottom", 30, 25);
+      @include adaptiveValue("margin-bottom", 30, 10);
     }
   }
 
@@ -127,12 +151,18 @@
       flex-direction: column;
       align-items: flex-start;
       gap: toRem(10);
-      margin-top: auto;
+      // margin-top: auto;
     }
   }
 
   &__button {
     column-gap: toRem(50);
+
+    &_hide {
+      @media (max-width: $mobile) {
+        display: none;
+      }
+    }
   }
 
   &__bg-ibg {
@@ -397,10 +427,6 @@
 
   &__top {
     @include adaptiveValue("margin-bottom", 60, 40);
-
-    @media (max-width: $mobile) {
-      justify-content: space-between;
-    }
   }
 
   &__title {
@@ -694,6 +720,10 @@
   @include adaptiveValue("padding-bottom", 105, 50);
   @include adaptiveValue("margin-bottom", 150, 50);
 
+  @media (max-width: $mobile) {
+    background-color: #3f7619;
+  }
+
   &__form {
     max-width: toRem(575);
   }
@@ -705,6 +735,10 @@
     top: 0;
     left: 0;
     z-index: -1;
+
+    @media (max-width: $mobile) {
+      display: none;
+    }
   }
 }
 
@@ -740,6 +774,12 @@
 
     @media (max-width: $mobile) {
       flex: 1 1 auto;
+    }
+
+    &_hide {
+      @media (max-width: $mobile) {
+        display: none;
+      }
     }
   }
 }
@@ -872,3 +912,41 @@
 }
 
 //========================================================================================================================================================
+
+.reviews-slider-sec {
+  @include adaptiveValue("padding-top", 95, 40);
+  @include adaptiveValue("padding-bottom", 95, 40);
+
+  &__container {
+    position: relative;
+  }
+
+  &__title {
+    @include adaptiveValue("margin-bottom", 60, 40);
+  }
+
+  &__slider {
+  }
+
+  &__wrapper {
+  }
+
+  &__slide-ibg--contain {
+    padding-bottom: percent(800, 1200);
+    position: relative;
+  }
+
+  &__navigation {
+    @media (min-width: $pc) {
+      position: absolute;
+      width: calc(100% + toRem(240));
+      top: 50%;
+      left: toRem(-120);
+      transform: translateY(-50%);
+    }
+    @media (max-width: $pc) {
+      margin-top: toRem(15);
+      justify-content: flex-end;
+    }
+  }
+}

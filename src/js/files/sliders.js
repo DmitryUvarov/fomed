@@ -176,6 +176,46 @@ function initSliders() {
 
 		});
 	}
+
+
+	if (document.querySelector('.reviews-slider-sec__slider')) {
+		new Swiper('.reviews-slider-sec__slider', {
+			modules: [Navigation],
+			observer: true,
+			observeParents: true,
+			loop: true,
+
+			speed: 500,
+			lazyPreloaderClass: 'preloader',
+
+			navigation: {
+				prevEl: '.reviews-slider-sec__slider .button-prev',
+				nextEl: '.reviews-slider-sec__slider .button-next',
+			},
+
+			breakpoints: {
+				320: {
+					slidesPerView: 2,
+					spaceBetween: 15,
+				},
+				768: {
+					slidesPerView: 2,
+					spaceBetween: 20,
+				},
+				992: {
+					slidesPerView: 2,
+					spaceBetween: 30,
+				},
+				1230: {
+					slidesPerView: 2,
+					spaceBetween: 50,
+				},
+			},
+
+		});
+	}
+
+
 }
 // Скролл на базі слайдера (за класом swiper scroll для оболонки слайдера)
 function initSlidersScroll() {
