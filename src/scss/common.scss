@@ -222,6 +222,7 @@
     pointer-events: all;
     color: #3f7619;
     @include adaptiveValue("font-size", 104, 55);
+
     transition: all 0.3s ease-in-out 0s;
 
     @media (any-hover: hover) {
@@ -232,6 +233,35 @@
 
     &.swiper-button-disabled {
       opacity: 0.4;
+    }
+
+    &_white {
+      border-radius: 50%;
+      @include adaptiveValue("width", 104, 55);
+      @include adaptiveValue("height", 104, 55);
+      border: toRem(1) solid #3f7619;
+      background-color: #fff;
+      color: #3f7619;
+      @include adaptiveValue("font-size", 54, 35);
+
+      @media (any-hover: hover) {
+        &:hover {
+          transform: scale(1);
+          background-color: #3f7619;
+          color: #fff;
+        }
+      }
+
+      &.button-prev {
+        &::before {
+          content: "\e909";
+        }
+      }
+      &.button-next {
+        &::before {
+          content: "\e908";
+        }
+      }
     }
   }
 }

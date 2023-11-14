@@ -8,7 +8,7 @@
 // При необхідності підключаємо додаткові модулі слайдера, вказуючи їх у {} через кому
 // Приклад: { Navigation, Autoplay }
 import Swiper from 'swiper';
-import { Scrollbar, Mousewheel, Navigation  } from 'swiper/modules';
+import { Scrollbar, Mousewheel, Navigation, EffectFade, Autoplay  } from 'swiper/modules';
 /*
 Основні модулі слайдера:
 Navigation, Pagination, Autoplay,
@@ -215,6 +215,29 @@ function initSliders() {
 		});
 	}
 
+	if (document.querySelector('.photo__slider')) {
+		new Swiper('.photo__slider', {
+			modules: [Navigation, EffectFade, Autoplay],
+			observer: true,
+			observeParents: true,
+			speed: 300,
+			slidesPerView: 1,
+			spaceBetween: 20,
+			lazyPreloaderClass: 'preloader',
+			loop: true,
+			effect: 'fade',
+
+			navigation: {
+				prevEl: ".photo__slider .button-prev",
+				nextEl: ".photo__slider .button-next",
+			  },
+
+			autoplay: {
+				delay: 3000,
+				disableOnInteraction: false,
+			},
+		});
+	}
 
 }
 // Скролл на базі слайдера (за класом swiper scroll для оболонки слайдера)

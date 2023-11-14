@@ -950,3 +950,44 @@
     }
   }
 }
+
+//========================================================================================================================================================
+
+.photo {
+  @include adaptiveValue("padding-top", 95, 40);
+  @include adaptiveValue("padding-bottom", 95, 40);
+  &__container {
+  }
+
+  &__title {
+    @include adaptiveValue("margin-bottom", 60, 40);
+  }
+
+  &__slider {
+    position: relative;
+  }
+
+  &__wrapper {
+  }
+
+  &__slide-ibg {
+    padding-bottom: percent(700, 1200);
+  }
+
+  &__navigation {
+    @media (min-width: $tablet) {
+      position: absolute;
+      width: 100%;
+      top: 50%;
+      left: 0;
+      transform: translateY(-50%);
+      justify-content: space-between;
+      @include adaptiveValue("padding-right", 30, 15, 0, 1230, 991);
+      @include adaptiveValue("padding-left", 30, 15, 0, 1230, 991);
+    }
+    @media (max-width: $tablet) {
+      justify-content: flex-end;
+      margin-top: toRem(20);
+    }
+  }
+}
