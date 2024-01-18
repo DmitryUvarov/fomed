@@ -106,32 +106,6 @@
                 </div>
             </section>
 
-            <section class="for-patients">
-                <div class="for-patients__container">
-                    <h2 class="for-patients__title title">Стоимость</h2>
-                    <div class="for-patients__items">
-                        <div class="for-patients__item">
-                            <a href="#" class="for-patients__link link">Открытая риносептопластика</a>
-                            <div class="for-patients__text text-2">
-                                <p>от 38 000 000 сум</p>
-                            </div>
-                        </div>
-                        <div class="for-patients__item">
-                            <a href="#" class="for-patients__link link">Пластика крыльев и кончика носа</a>
-                            <div class="for-patients__text text-2">
-                                <p>от 9 000 000 сум</p>
-                            </div>
-                        </div>
-                        <div class="for-patients__item">
-                            <a href="#" class="for-patients__link link">Септопластика</a>
-                            <div class="for-patients__text text-2">
-                                <p>от 9 000 000 сум</p>
-                            </div>
-                        </div>
-                    </div>
-                </div>
-            </section>
-
             <section class="doctors">
                 <div class="doctors__container">
                     <div class="doctors__top top-block">
@@ -171,12 +145,98 @@
                 </div>
             </section>
 
+            <section class="for-patients">
+                <div class="for-patients__container">
+                    <h2 class="for-patients__title title">Стоимость</h2>
+                    <div class="for-patients__items">
+                        <div class="for-patients__item">
+                            <button type="button" class="for-patients__link link" data-popup="#popup">Открытая риносептопластика</button>
+                            <div class="for-patients__text text-2">
+                                <p>от 38 000 000 сум</p>
+                            </div>
+                        </div>
+                        <div class="for-patients__item">
+                            <button type="button" class="for-patients__link link" data-popup="#popup">Пластика крыльев и кончика носа</button>
+                            <div class="for-patients__text text-2">
+                                <p>от 9 000 000 сум</p>
+                            </div>
+                        </div>
+                        <div class="for-patients__item">
+                            <button type="button" class="for-patients__link link" data-popup="#popup">Септопластика</button>
+                            <div class="for-patients__text text-2">
+                                <p>от 9 000 000 сум</p>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </section>
+
+            <section class="about">
+                <div class="about__container">
+                    <h2 class="about__title title">О клинике</h2>
+                    <div class="about__body">
+                        <div class="about__image-ibg"><img src="@img/about/01.jpg" alt=""></div>
+                        <div class="about__content">
+                            <div class="about__name text-3">Клиника пластической хирургии Fomed </div>
+                            <div class="about__text text">
+                                <p>Профессионализм, индивидуальный подход, внимательное отношение к каждому пациенту, высокое качество оказываемых услуг, современное медицинское оборудование – то, что ожидает здесь каждого.</p>
+                            </div>
+                            <div class="about__items">
+                                <div class="about__item-num"><span>500</span>+</div>
+                                <div class="about__item-text text">довольных пациентов в год</div>
+                                <div class="about__item-num"><span>30</span>+</div>
+                                <div class="about__item-text text">стран мира-география наших пациентов</div>
+                                <div class="about__item-num"><span>200</span>+</div>
+                                <div class="about__item-text text">обучений, прошли наши врачи</div>
+                            </div>
+                            <div class="about__buttons">
+                                <button class="about__button button button_green button_green_line">Больше о клинике</button>
+                                <button class="about__button button button_green">Записаться</button>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </section>
+
+
+
             @@include('html/_submit.htm',{
             "image__link":"img/submit/04.jpg"
             })
 
+
+            <section class="readmore">
+                <div class="readmore__container">
+                    <h2 class="readmore__title title">Клиника Fomed предлагает современные методы в области пластической хирургии</h2>
+                    <div class="readmore__body">
+                        <div class="readmore__image-ibg"><img src="@img/readmore/01.jpg" alt="" loading="lazy"></div>
+
+                        <div class="readmore__content">
+                            <div data-showmore="items" class="readmore__showmore showmore">
+                                <div data-showmore-content="3" class="showmore__content">
+                                    <p>В нашей клинике мы стремимся помочь людям почувствовать себя уверенно и красиво, предлагая широкий спектр услуг по пластической и косметической хирургии. Наша команда высококвалифицированных специалистов обладает богатым опытом и глубоким пониманием индивидуальных потребностей каждого пациента.</p>
+
+                                    <p>Мы предлагаем современные методы и передовые технологии в области пластической хирургии, а также косметологические процедуры, направленные на восстановление и улучшение внешнего вида. Наша цель - помочь вам достичь гармонии между вашим внешним обликом и внутренним самочувствием.</p>
+
+                                    <p>Наша клиника специализируется на различных процедурах, включая ринопластику, маммопластику, лифтинги, контурную пластику, инъекционные процедуры, а также реконструктивную хирургию. Мы также предлагаем консультации по косметологии и эстетической медицине, помогая нашим пациентам выбрать оптимальные решения для достижения их желаемого внешнего вида.</p>
+                                    <p>В нашей клинике мы стремимся помочь людям почувствовать себя уверенно и красиво, предлагая широкий спектр услуг по пластической и косметической хирургии. Наша команда высококвалифицированных специалистов обладает богатым опытом и глубоким пониманием индивидуальных потребностей каждого пациента.</p>
+
+                                    <p>Мы предлагаем современные методы и передовые технологии в области пластической хирургии, а также косметологические процедуры, направленные на восстановление и улучшение внешнего вида. Наша цель - помочь вам достичь гармонии между вашим внешним обликом и внутренним самочувствием.</p>
+
+                                    <p>Наша клиника специализируется на различных процедурах, включая ринопластику, маммопластику, лифтинги, контурную пластику, инъекционные процедуры, а также реконструктивную хирургию. Мы также предлагаем консультации по косметологии и эстетической медицине, помогая нашим пациентам выбрать оптимальные решения для достижения их желаемого внешнего вида.</p>
+                                </div>
+                                <button hidden data-showmore-button type="button" class="showmore__more"><span>Читать дальше</span><span>Скрыть</span></button>
+                            </div>
+                        </div>
+
+                    </div>
+                </div>
+            </section>
+
+
         </main>
         @@include('html/_footer.htm',{})
+        @@include('html/_popup.htm',{})
     </div>
     @@include('html/_js.htm',{})
 </body>

@@ -718,7 +718,7 @@
   position: relative;
   @include adaptiveValue("padding-top", 100, 50);
   @include adaptiveValue("padding-bottom", 105, 50);
-  @include adaptiveValue("margin-bottom", 150, 50);
+  @include adaptiveValue("margin-bottom", 100, 30);
 
   @media (max-width: $mobile) {
     background-color: #3f7619;
@@ -988,6 +988,82 @@
     @media (max-width: $tablet) {
       justify-content: flex-end;
       margin-top: toRem(20);
+    }
+  }
+}
+
+//========================================================================================================================================================
+
+.readmore {
+  // @include adaptiveValue("padding-top", 95, 40);
+  padding-top: toRem(30);
+  @include adaptiveValue("padding-bottom", 95, 40);
+  &__container {
+  }
+
+  &__title {
+    @include adaptiveValue("margin-bottom", 50, 30);
+    @include adaptiveValue("font-size", 50, 30);
+  }
+
+  &__body {
+    display: flex;
+    @include adaptiveValue("column-gap", 50, 15, 0, 1230, 991);
+
+    @media (max-width: $mobile) {
+      flex-direction: column;
+      row-gap: toRem(20);
+    }
+  }
+
+  &__image-ibg {
+    height: fit-content;
+    @media (min-width: $mobile) {
+      flex: 0 0 percent(578, 1200);
+      padding-bottom: percent(586, 1200);
+    }
+    @media (max-width: $mobile) {
+      padding-bottom: percent(220, 345);
+    }
+  }
+
+  &__content {
+  }
+
+  &__showmore {
+  }
+}
+
+.showmore {
+  &__content {
+    color: #000100;
+    font-family: Helvetica;
+    @include adaptiveValue("font-size", 18, 16);
+    font-weight: 400;
+    line-height: 150%; /* 27px */
+
+    p {
+      &:not(:last-child) {
+        @include adaptiveValue("margin-bottom", 20, 15);
+      }
+    }
+  }
+
+  &__more {
+    color: #3f7619;
+    font-family: Helvetica;
+    @include adaptiveValue("font-size", 24, 20);
+    font-weight: 400;
+    line-height: 150%; /* 36/24 */
+    text-decoration-line: underline;
+
+    @include adaptiveValue("margin-top", 20, 15);
+
+    transition: all 0.3s ease 0s;
+    @media (any-hover: hover) {
+      &:hover {
+        color: #000100;
+      }
     }
   }
 }

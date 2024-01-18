@@ -136,7 +136,7 @@
 //========================================================================================================================================================
 
 .other-article {
-  @include adaptiveValue("padding-top", 95, 60);
+  // @include adaptiveValue("padding-top", 95, 60);
   @include adaptiveValue("padding-bottom", 95, 60);
   &__title {
     @include adaptiveValue("margin-bottom", 70, 40);
